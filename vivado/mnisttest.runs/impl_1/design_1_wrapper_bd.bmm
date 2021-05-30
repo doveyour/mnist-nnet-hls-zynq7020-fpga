@@ -1,0 +1,44 @@
+// BMM LOC annotation file.
+//
+// SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+// Vivado v2018.3 (64-bit)
+// Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Processor 'design_1_i_processing_system7_0', ID 100, memory map.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+ADDRESS_MAP design_1_i_processing_system7_0 ARM 100 design_1_i/processing_system7_0
+
+    ///////////////////////////////////////////////////////////////////////////////
+    //
+    // Processor 'design_1_i_processing_system7_0' address space 'design_1_i_axi_bram_ctrl_0' 0X0000000040000000:0X0000000040001FFF (8 KBytes).
+    //
+    ///////////////////////////////////////////////////////////////////////////////
+
+    ADDRESS_SPACE design_1_i_axi_bram_ctrl_0 RAMB32 [0X0000000040000000:0X0000000040001FFF] design_1_i/axi_bram_ctrl_0
+        BUS_BLOCK
+            design_1_i/mnist_nn_predict_0_bram/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram RAMB32 [31:16] [0:2047] PLACED = X2Y17;
+            design_1_i/mnist_nn_predict_0_bram/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram RAMB32 [15:0] [0:2047] PLACED = X2Y18;
+        END_BUS_BLOCK;
+    END_ADDRESS_SPACE;
+
+
+    ///////////////////////////////////////////////////////////////////////////////
+    //
+    // Processor 'design_1_i_processing_system7_0' address space 'design_1_i_axi_bram_ctrl_1' 0X0000000042000000:0X0000000042001FFF (8 KBytes).
+    //
+    ///////////////////////////////////////////////////////////////////////////////
+
+    ADDRESS_SPACE design_1_i_axi_bram_ctrl_1 RAMB32 [0X0000000042000000:0X0000000042001FFF] design_1_i/axi_bram_ctrl_1
+        BUS_BLOCK
+            design_1_i/mnist_nn_predict_0_bram1/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram RAMB32 [31:16] [0:2047] PLACED = X2Y20;
+            design_1_i/mnist_nn_predict_0_bram1/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram RAMB32 [15:0] [0:2047] PLACED = X2Y19;
+        END_BUS_BLOCK;
+    END_ADDRESS_SPACE;
+
+END_ADDRESS_MAP;
+

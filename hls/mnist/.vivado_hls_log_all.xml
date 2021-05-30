@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mnist_nn_predict/input_r_Din_A' to 0." projectName="mnist" solutionName="solution1" date="2021-05-10T08:06:01.204+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mnist_nn_predict/input_r_WEN_A' to 0." projectName="mnist" solutionName="solution1" date="2021-05-10T08:06:01.184+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'mnist_nn_predict/output' to 'mnist_nn_predict/output_r' to avoid the conflict with HDL keywords or other object names." projectName="mnist" solutionName="solution1" date="2021-05-10T08:06:00.289+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'mnist_nn_predict/input' to 'mnist_nn_predict/input_r' to avoid the conflict with HDL keywords or other object names." projectName="mnist" solutionName="solution1" date="2021-05-10T08:06:00.268+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'mnist_nn_predict_ap_fmul_1_max_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="mnist" solutionName="solution1" date="2021-05-10T08:07:09.771+0800" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'mnist_nn_predict_ap_fexp_6_full_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="mnist" solutionName="solution1" date="2021-05-10T08:07:08.356+0800" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'mnist_nn_predict_ap_fdiv_10_no_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="mnist" solutionName="solution1" date="2021-05-10T08:07:07.063+0800" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'mnist_nn_predict_ap_fadd_2_full_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xA;create_ip: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1417.980 ; gain = 86.621 ; free physical = 112 ; free virtual = 1373" projectName="mnist" solutionName="solution1" date="2021-05-10T08:07:05.969+0800" type="Warning"/>
+      </packageLog>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

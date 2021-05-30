@@ -1,0 +1,1606 @@
+
+
+================================================================
+== Vivado HLS Report for 'mnist_nn_predict'
+================================================================
+* Date:           Mon May 10 08:06:00 2021
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        mnist
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.588|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +--------+--------+--------+--------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |   min  |   max  |   min  |   max  |   Type  |
+    +--------+--------+--------+--------+---------+
+    |  476633|  476633|  476633|  476633|   none  |
+    +--------+--------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+        |             |     Latency     | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min  |   max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  452096|  452096|      7064|          -|          -|    64|    no    |
+        | + Loop 1.1  |    7056|    7056|         9|          -|          -|   784|    no    |
+        |- Loop 2     |    1728|    1728|        27|          -|          -|    64|    no    |
+        |- Loop 3     |   18688|   18688|       584|          -|          -|    32|    no    |
+        | + Loop 3.1  |     576|     576|         9|          -|          -|    64|    no    |
+        |- Loop 4     |     864|     864|        27|          -|          -|    32|    no    |
+        |- Loop 5     |    2960|    2960|       296|          -|          -|    10|    no    |
+        | + Loop 5.1  |     288|     288|         9|          -|          -|    32|    no    |
+        |- Loop 6     |     270|     270|        27|          -|          -|    10|    no    |
+        |- Loop 7     |      20|      20|         2|          -|          -|    10|    no    |
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 132
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond7)
+	18  / (exitcond7)
+3 --> 
+	4  / (!exitcond6)
+	12  / (exitcond6)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	3  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	2  / true
+18 --> 
+	19  / (!exitcond)
+	45  / (exitcond)
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	18  / true
+45 --> 
+	46  / (!exitcond5)
+	61  / (exitcond5)
+46 --> 
+	47  / (!exitcond4)
+	55  / (exitcond4)
+47 --> 
+	48  / true
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	52  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	46  / true
+55 --> 
+	56  / true
+56 --> 
+	57  / true
+57 --> 
+	58  / true
+58 --> 
+	59  / true
+59 --> 
+	60  / true
+60 --> 
+	45  / true
+61 --> 
+	62  / (!exitcond8)
+	88  / (exitcond8)
+62 --> 
+	63  / true
+63 --> 
+	64  / true
+64 --> 
+	65  / true
+65 --> 
+	66  / true
+66 --> 
+	67  / true
+67 --> 
+	68  / true
+68 --> 
+	69  / true
+69 --> 
+	70  / true
+70 --> 
+	71  / true
+71 --> 
+	72  / true
+72 --> 
+	73  / true
+73 --> 
+	74  / true
+74 --> 
+	75  / true
+75 --> 
+	76  / true
+76 --> 
+	77  / true
+77 --> 
+	78  / true
+78 --> 
+	79  / true
+79 --> 
+	80  / true
+80 --> 
+	81  / true
+81 --> 
+	82  / true
+82 --> 
+	83  / true
+83 --> 
+	84  / true
+84 --> 
+	85  / true
+85 --> 
+	86  / true
+86 --> 
+	87  / true
+87 --> 
+	61  / true
+88 --> 
+	89  / (!exitcond3)
+	104  / (exitcond3)
+89 --> 
+	90  / (!exitcond2)
+	98  / (exitcond2)
+90 --> 
+	91  / true
+91 --> 
+	92  / true
+92 --> 
+	93  / true
+93 --> 
+	94  / true
+94 --> 
+	95  / true
+95 --> 
+	96  / true
+96 --> 
+	97  / true
+97 --> 
+	89  / true
+98 --> 
+	99  / true
+99 --> 
+	100  / true
+100 --> 
+	101  / true
+101 --> 
+	102  / true
+102 --> 
+	103  / true
+103 --> 
+	88  / true
+104 --> 
+	105  / (!exitcond9)
+	131  / (exitcond9)
+105 --> 
+	106  / true
+106 --> 
+	107  / true
+107 --> 
+	108  / true
+108 --> 
+	109  / true
+109 --> 
+	110  / true
+110 --> 
+	111  / true
+111 --> 
+	112  / true
+112 --> 
+	113  / true
+113 --> 
+	114  / true
+114 --> 
+	115  / true
+115 --> 
+	116  / true
+116 --> 
+	117  / true
+117 --> 
+	118  / true
+118 --> 
+	119  / true
+119 --> 
+	120  / true
+120 --> 
+	121  / true
+121 --> 
+	122  / true
+122 --> 
+	123  / true
+123 --> 
+	124  / true
+124 --> 
+	125  / true
+125 --> 
+	126  / true
+126 --> 
+	127  / true
+127 --> 
+	128  / true
+128 --> 
+	129  / true
+129 --> 
+	130  / true
+130 --> 
+	104  / true
+131 --> 
+	132  / (!exitcond1)
+132 --> 
+	131  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.46>
+ST_1 : Operation 133 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([784 x float]* %input_r) nounwind, !map !11"   --->   Operation 133 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 134 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([10 x float]* %output_r) nounwind, !map !17"   --->   Operation 134 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 135 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([17 x i8]* @mnist_nn_predict_str) nounwind"   --->   Operation 135 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 136 [1/1] (0.00ns)   --->   "%output1 = alloca [64 x float], align 16" [mnist/src/hls_mnist.cpp:54]   --->   Operation 136 'alloca' 'output1' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 137 [1/1] (0.00ns)   --->   "%output2 = alloca [32 x float], align 16" [mnist/src/hls_mnist.cpp:55]   --->   Operation 137 'alloca' 'output2' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 138 [1/1] (0.00ns)   --->   "%output3 = alloca [10 x float], align 16" [mnist/src/hls_mnist.cpp:56]   --->   Operation 138 'alloca' 'output3' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 139 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [mnist/src/hls_mnist.cpp:23]   --->   Operation 139 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 140 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([784 x float]* %input_r, [5 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [mnist/src/hls_mnist.cpp:24]   --->   Operation 140 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 141 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([10 x float]* %output_r, [5 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [mnist/src/hls_mnist.cpp:25]   --->   Operation 141 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 142 [1/1] (0.46ns)   --->   "br label %1" [mnist/src/hls_mnist.cpp:67]   --->   Operation 142 'br' <Predicate = true> <Delay = 0.46>
+
+State 2 <SV = 1> <Delay = 1.54>
+ST_2 : Operation 143 [1/1] (0.00ns)   --->   "%k = phi i7 [ 0, %0 ], [ %k_4, %3 ]"   --->   Operation 143 'phi' 'k' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 144 [1/1] (0.00ns)   --->   "%phi_mul = phi i16 [ 0, %0 ], [ %next_mul, %3 ]"   --->   Operation 144 'phi' 'phi_mul' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 145 [1/1] (1.54ns)   --->   "%next_mul = add i16 %phi_mul, 784"   --->   Operation 145 'add' 'next_mul' <Predicate = true> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 146 [1/1] (1.06ns)   --->   "%exitcond7 = icmp eq i7 %k, -64" [mnist/src/hls_mnist.cpp:67]   --->   Operation 146 'icmp' 'exitcond7' <Predicate = true> <Delay = 1.06> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.96> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 147 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 64, i64 64, i64 64) nounwind"   --->   Operation 147 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 148 [1/1] (1.31ns)   --->   "%k_4 = add i7 %k, 1" [mnist/src/hls_mnist.cpp:67]   --->   Operation 148 'add' 'k_4' <Predicate = true> <Delay = 1.31> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 149 [1/1] (0.00ns)   --->   "br i1 %exitcond7, label %.preheader35.preheader, label %.preheader10.preheader" [mnist/src/hls_mnist.cpp:67]   --->   Operation 149 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 150 [1/1] (0.00ns)   --->   "%tmp = zext i7 %k to i64" [mnist/src/hls_mnist.cpp:73]   --->   Operation 150 'zext' 'tmp' <Predicate = (!exitcond7)> <Delay = 0.00>
+ST_2 : Operation 151 [1/1] (0.46ns)   --->   "br label %.preheader10" [mnist/src/hls_mnist.cpp:71]   --->   Operation 151 'br' <Predicate = (!exitcond7)> <Delay = 0.46>
+ST_2 : Operation 152 [1/1] (0.46ns)   --->   "br label %.preheader35"   --->   Operation 152 'br' <Predicate = (exitcond7)> <Delay = 0.46>
+
+State 3 <SV = 2> <Delay = 4.31>
+ST_3 : Operation 153 [1/1] (0.00ns)   --->   "%z1 = phi float [ %z1_2, %2 ], [ 0.000000e+00, %.preheader10.preheader ]"   --->   Operation 153 'phi' 'z1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 154 [1/1] (0.00ns)   --->   "%j = phi i10 [ %j_3, %2 ], [ 0, %.preheader10.preheader ]"   --->   Operation 154 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 155 [1/1] (1.94ns)   --->   "%exitcond6 = icmp eq i10 %j, -240" [mnist/src/hls_mnist.cpp:71]   --->   Operation 155 'icmp' 'exitcond6' <Predicate = true> <Delay = 1.94> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.96> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 156 [1/1] (0.00ns)   --->   "%empty_3 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 784, i64 784, i64 784) nounwind"   --->   Operation 156 'speclooptripcount' 'empty_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 157 [1/1] (1.41ns)   --->   "%j_3 = add i10 %j, 1" [mnist/src/hls_mnist.cpp:71]   --->   Operation 157 'add' 'j_3' <Predicate = true> <Delay = 1.41> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 158 [1/1] (0.00ns)   --->   "br i1 %exitcond6, label %3, label %2" [mnist/src/hls_mnist.cpp:71]   --->   Operation 158 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 159 [1/1] (0.00ns)   --->   "%tmp_4 = zext i10 %j to i64" [mnist/src/hls_mnist.cpp:73]   --->   Operation 159 'zext' 'tmp_4' <Predicate = (!exitcond6)> <Delay = 0.00>
+ST_3 : Operation 160 [1/1] (0.00ns)   --->   "%tmp_4_cast = zext i10 %j to i16" [mnist/src/hls_mnist.cpp:73]   --->   Operation 160 'zext' 'tmp_4_cast' <Predicate = (!exitcond6)> <Delay = 0.00>
+ST_3 : Operation 161 [1/1] (1.54ns)   --->   "%tmp_9 = add i16 %phi_mul, %tmp_4_cast" [mnist/src/hls_mnist.cpp:73]   --->   Operation 161 'add' 'tmp_9' <Predicate = (!exitcond6)> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 162 [1/1] (0.00ns)   --->   "%tmp_10_cast = zext i16 %tmp_9 to i64" [mnist/src/hls_mnist.cpp:73]   --->   Operation 162 'zext' 'tmp_10_cast' <Predicate = (!exitcond6)> <Delay = 0.00>
+ST_3 : Operation 163 [1/1] (0.00ns)   --->   "%weight1_addr = getelementptr [50176 x float]* @weight1, i64 0, i64 %tmp_10_cast" [mnist/src/hls_mnist.cpp:73]   --->   Operation 163 'getelementptr' 'weight1_addr' <Predicate = (!exitcond6)> <Delay = 0.00>
+ST_3 : Operation 164 [2/2] (2.77ns)   --->   "%weight1_load = load float* %weight1_addr, align 4" [mnist/src/hls_mnist.cpp:73]   --->   Operation 164 'load' 'weight1_load' <Predicate = (!exitcond6)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_3 : Operation 165 [1/1] (0.00ns)   --->   "%input_addr = getelementptr [784 x float]* %input_r, i64 0, i64 %tmp_4" [mnist/src/hls_mnist.cpp:73]   --->   Operation 165 'getelementptr' 'input_addr' <Predicate = (!exitcond6)> <Delay = 0.00>
+ST_3 : Operation 166 [2/2] (2.77ns)   --->   "%input_load = load float* %input_addr, align 4" [mnist/src/hls_mnist.cpp:73]   --->   Operation 166 'load' 'input_load' <Predicate = (!exitcond6)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 167 [1/1] (0.00ns)   --->   "%bias1_addr = getelementptr inbounds [64 x float]* @bias1, i64 0, i64 %tmp" [mnist/src/hls_mnist.cpp:74]   --->   Operation 167 'getelementptr' 'bias1_addr' <Predicate = (exitcond6)> <Delay = 0.00>
+ST_3 : Operation 168 [2/2] (2.77ns)   --->   "%bias1_load = load float* %bias1_addr, align 4" [mnist/src/hls_mnist.cpp:74]   --->   Operation 168 'load' 'bias1_load' <Predicate = (exitcond6)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 4 <SV = 3> <Delay = 2.77>
+ST_4 : Operation 169 [1/2] (2.77ns)   --->   "%weight1_load = load float* %weight1_addr, align 4" [mnist/src/hls_mnist.cpp:73]   --->   Operation 169 'load' 'weight1_load' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_4 : Operation 170 [1/2] (2.77ns)   --->   "%input_load = load float* %input_addr, align 4" [mnist/src/hls_mnist.cpp:73]   --->   Operation 170 'load' 'input_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 5 <SV = 4> <Delay = 8.43>
+ST_5 : Operation 171 [3/3] (8.43ns)   --->   "%tmp_5 = fmul float %weight1_load, %input_load" [mnist/src/hls_mnist.cpp:73]   --->   Operation 171 'fmul' 'tmp_5' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 8.43>
+ST_6 : Operation 172 [2/3] (8.43ns)   --->   "%tmp_5 = fmul float %weight1_load, %input_load" [mnist/src/hls_mnist.cpp:73]   --->   Operation 172 'fmul' 'tmp_5' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 8.43>
+ST_7 : Operation 173 [1/3] (8.43ns)   --->   "%tmp_5 = fmul float %weight1_load, %input_load" [mnist/src/hls_mnist.cpp:73]   --->   Operation 173 'fmul' 'tmp_5' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 8.58>
+ST_8 : Operation 174 [4/4] (8.58ns)   --->   "%z1_2 = fadd float %z1, %tmp_5" [mnist/src/hls_mnist.cpp:73]   --->   Operation 174 'fadd' 'z1_2' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 8.58>
+ST_9 : Operation 175 [3/4] (8.58ns)   --->   "%z1_2 = fadd float %z1, %tmp_5" [mnist/src/hls_mnist.cpp:73]   --->   Operation 175 'fadd' 'z1_2' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 8.58>
+ST_10 : Operation 176 [2/4] (8.58ns)   --->   "%z1_2 = fadd float %z1, %tmp_5" [mnist/src/hls_mnist.cpp:73]   --->   Operation 176 'fadd' 'z1_2' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 8.58>
+ST_11 : Operation 177 [1/4] (8.58ns)   --->   "%z1_2 = fadd float %z1, %tmp_5" [mnist/src/hls_mnist.cpp:73]   --->   Operation 177 'fadd' 'z1_2' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 178 [1/1] (0.00ns)   --->   "br label %.preheader10" [mnist/src/hls_mnist.cpp:71]   --->   Operation 178 'br' <Predicate = true> <Delay = 0.00>
+
+State 12 <SV = 3> <Delay = 2.77>
+ST_12 : Operation 179 [1/2] (2.77ns)   --->   "%bias1_load = load float* %bias1_addr, align 4" [mnist/src/hls_mnist.cpp:74]   --->   Operation 179 'load' 'bias1_load' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 13 <SV = 4> <Delay = 8.58>
+ST_13 : Operation 180 [4/4] (8.58ns)   --->   "%z1_1 = fadd float %z1, %bias1_load" [mnist/src/hls_mnist.cpp:74]   --->   Operation 180 'fadd' 'z1_1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 5> <Delay = 8.58>
+ST_14 : Operation 181 [3/4] (8.58ns)   --->   "%z1_1 = fadd float %z1, %bias1_load" [mnist/src/hls_mnist.cpp:74]   --->   Operation 181 'fadd' 'z1_1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 6> <Delay = 8.58>
+ST_15 : Operation 182 [2/4] (8.58ns)   --->   "%z1_1 = fadd float %z1, %bias1_load" [mnist/src/hls_mnist.cpp:74]   --->   Operation 182 'fadd' 'z1_1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 7> <Delay = 8.58>
+ST_16 : Operation 183 [1/4] (8.58ns)   --->   "%z1_1 = fadd float %z1, %bias1_load" [mnist/src/hls_mnist.cpp:74]   --->   Operation 183 'fadd' 'z1_1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 8> <Delay = 2.77>
+ST_17 : Operation 184 [1/1] (0.00ns)   --->   "%output1_addr = getelementptr inbounds [64 x float]* %output1, i64 0, i64 %tmp" [mnist/src/hls_mnist.cpp:75]   --->   Operation 184 'getelementptr' 'output1_addr' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 185 [1/1] (2.77ns)   --->   "store float %z1_1, float* %output1_addr, align 4" [mnist/src/hls_mnist.cpp:75]   --->   Operation 185 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_17 : Operation 186 [1/1] (0.00ns)   --->   "br label %1" [mnist/src/hls_mnist.cpp:67]   --->   Operation 186 'br' <Predicate = true> <Delay = 0.00>
+
+State 18 <SV = 2> <Delay = 2.77>
+ST_18 : Operation 187 [1/1] (0.00ns)   --->   "%i_i = phi i7 [ %i, %4 ], [ 0, %.preheader35.preheader ]"   --->   Operation 187 'phi' 'i_i' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 188 [1/1] (0.00ns)   --->   "%empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 64, i64 64, i64 64) nounwind"   --->   Operation 188 'speclooptripcount' 'empty_4' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 189 [1/1] (1.06ns)   --->   "%exitcond = icmp eq i7 %i_i, -64" [mnist/src/hls_mnist.cpp:16->mnist/src/hls_mnist.cpp:78]   --->   Operation 189 'icmp' 'exitcond' <Predicate = true> <Delay = 1.06> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.96> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 190 [1/1] (1.31ns)   --->   "%i = add i7 %i_i, 1" [mnist/src/hls_mnist.cpp:16->mnist/src/hls_mnist.cpp:78]   --->   Operation 190 'add' 'i' <Predicate = true> <Delay = 1.31> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 191 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %Sigmoid.2.exit.preheader, label %4" [mnist/src/hls_mnist.cpp:16->mnist/src/hls_mnist.cpp:78]   --->   Operation 191 'br' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 192 [1/1] (0.00ns)   --->   "%tmp_i = zext i7 %i_i to i64" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 192 'zext' 'tmp_i' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_18 : Operation 193 [1/1] (0.00ns)   --->   "%output1_addr_2 = getelementptr [64 x float]* %output1, i64 0, i64 %tmp_i" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 193 'getelementptr' 'output1_addr_2' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_18 : Operation 194 [2/2] (2.77ns)   --->   "%output1_load_1 = load float* %output1_addr_2, align 4" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 194 'load' 'output1_load_1' <Predicate = (!exitcond)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_18 : Operation 195 [1/1] (0.46ns)   --->   "br label %Sigmoid.2.exit" [mnist/src/hls_mnist.cpp:83]   --->   Operation 195 'br' <Predicate = (exitcond)> <Delay = 0.46>
+
+State 19 <SV = 3> <Delay = 2.77>
+ST_19 : Operation 196 [1/2] (2.77ns)   --->   "%output1_load_1 = load float* %output1_addr_2, align 4" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 196 'load' 'output1_load_1' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 20 <SV = 4> <Delay = 7.93>
+ST_20 : Operation 197 [1/1] (0.00ns)   --->   "%tmp_12_to_int_i = bitcast float %output1_load_1 to i32" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 197 'bitcast' 'tmp_12_to_int_i' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 198 [1/1] (0.80ns)   --->   "%tmp_12_neg_i = xor i32 %tmp_12_to_int_i, -2147483648" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 198 'xor' 'tmp_12_neg_i' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 199 [1/1] (0.00ns)   --->   "%tmp_12_i = bitcast i32 %tmp_12_neg_i to float" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 199 'bitcast' 'tmp_12_i' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 200 [8/8] (7.12ns)   --->   "%tmp_13_i = call float @llvm.exp.f32(float %tmp_12_i) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 200 'fexp' 'tmp_13_i' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 21 <SV = 5> <Delay = 7.12>
+ST_21 : Operation 201 [7/8] (7.12ns)   --->   "%tmp_13_i = call float @llvm.exp.f32(float %tmp_12_i) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 201 'fexp' 'tmp_13_i' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 22 <SV = 6> <Delay = 7.12>
+ST_22 : Operation 202 [6/8] (7.12ns)   --->   "%tmp_13_i = call float @llvm.exp.f32(float %tmp_12_i) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 202 'fexp' 'tmp_13_i' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 23 <SV = 7> <Delay = 7.12>
+ST_23 : Operation 203 [5/8] (7.12ns)   --->   "%tmp_13_i = call float @llvm.exp.f32(float %tmp_12_i) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 203 'fexp' 'tmp_13_i' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 24 <SV = 8> <Delay = 7.12>
+ST_24 : Operation 204 [4/8] (7.12ns)   --->   "%tmp_13_i = call float @llvm.exp.f32(float %tmp_12_i) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 204 'fexp' 'tmp_13_i' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 25 <SV = 9> <Delay = 7.12>
+ST_25 : Operation 205 [3/8] (7.12ns)   --->   "%tmp_13_i = call float @llvm.exp.f32(float %tmp_12_i) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 205 'fexp' 'tmp_13_i' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 26 <SV = 10> <Delay = 7.12>
+ST_26 : Operation 206 [2/8] (7.12ns)   --->   "%tmp_13_i = call float @llvm.exp.f32(float %tmp_12_i) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 206 'fexp' 'tmp_13_i' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 27 <SV = 11> <Delay = 7.12>
+ST_27 : Operation 207 [1/8] (7.12ns)   --->   "%tmp_13_i = call float @llvm.exp.f32(float %tmp_12_i) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 207 'fexp' 'tmp_13_i' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 28 <SV = 12> <Delay = 8.58>
+ST_28 : Operation 208 [4/4] (8.58ns)   --->   "%tmp_14_i = fadd float %tmp_13_i, 1.000000e+00" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 208 'fadd' 'tmp_14_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 13> <Delay = 8.58>
+ST_29 : Operation 209 [3/4] (8.58ns)   --->   "%tmp_14_i = fadd float %tmp_13_i, 1.000000e+00" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 209 'fadd' 'tmp_14_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 30 <SV = 14> <Delay = 8.58>
+ST_30 : Operation 210 [2/4] (8.58ns)   --->   "%tmp_14_i = fadd float %tmp_13_i, 1.000000e+00" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 210 'fadd' 'tmp_14_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 15> <Delay = 8.58>
+ST_31 : Operation 211 [1/4] (8.58ns)   --->   "%tmp_14_i = fadd float %tmp_13_i, 1.000000e+00" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 211 'fadd' 'tmp_14_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 16> <Delay = 7.19>
+ST_32 : Operation 212 [12/12] (7.19ns)   --->   "%tmp_15_i = fdiv float 1.000000e+00, %tmp_14_i" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 212 'fdiv' 'tmp_15_i' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 17> <Delay = 7.19>
+ST_33 : Operation 213 [11/12] (7.19ns)   --->   "%tmp_15_i = fdiv float 1.000000e+00, %tmp_14_i" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 213 'fdiv' 'tmp_15_i' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 18> <Delay = 7.19>
+ST_34 : Operation 214 [10/12] (7.19ns)   --->   "%tmp_15_i = fdiv float 1.000000e+00, %tmp_14_i" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 214 'fdiv' 'tmp_15_i' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 19> <Delay = 7.19>
+ST_35 : Operation 215 [9/12] (7.19ns)   --->   "%tmp_15_i = fdiv float 1.000000e+00, %tmp_14_i" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 215 'fdiv' 'tmp_15_i' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 20> <Delay = 7.19>
+ST_36 : Operation 216 [8/12] (7.19ns)   --->   "%tmp_15_i = fdiv float 1.000000e+00, %tmp_14_i" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 216 'fdiv' 'tmp_15_i' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 37 <SV = 21> <Delay = 7.19>
+ST_37 : Operation 217 [7/12] (7.19ns)   --->   "%tmp_15_i = fdiv float 1.000000e+00, %tmp_14_i" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 217 'fdiv' 'tmp_15_i' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 38 <SV = 22> <Delay = 7.19>
+ST_38 : Operation 218 [6/12] (7.19ns)   --->   "%tmp_15_i = fdiv float 1.000000e+00, %tmp_14_i" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 218 'fdiv' 'tmp_15_i' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 39 <SV = 23> <Delay = 7.19>
+ST_39 : Operation 219 [5/12] (7.19ns)   --->   "%tmp_15_i = fdiv float 1.000000e+00, %tmp_14_i" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 219 'fdiv' 'tmp_15_i' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 40 <SV = 24> <Delay = 7.19>
+ST_40 : Operation 220 [4/12] (7.19ns)   --->   "%tmp_15_i = fdiv float 1.000000e+00, %tmp_14_i" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 220 'fdiv' 'tmp_15_i' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 41 <SV = 25> <Delay = 7.19>
+ST_41 : Operation 221 [3/12] (7.19ns)   --->   "%tmp_15_i = fdiv float 1.000000e+00, %tmp_14_i" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 221 'fdiv' 'tmp_15_i' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 42 <SV = 26> <Delay = 7.19>
+ST_42 : Operation 222 [2/12] (7.19ns)   --->   "%tmp_15_i = fdiv float 1.000000e+00, %tmp_14_i" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 222 'fdiv' 'tmp_15_i' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 43 <SV = 27> <Delay = 7.19>
+ST_43 : Operation 223 [1/12] (7.19ns)   --->   "%tmp_15_i = fdiv float 1.000000e+00, %tmp_14_i" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 223 'fdiv' 'tmp_15_i' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 44 <SV = 28> <Delay = 2.77>
+ST_44 : Operation 224 [1/1] (2.77ns)   --->   "store float %tmp_15_i, float* %output1_addr_2, align 4" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78]   --->   Operation 224 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_44 : Operation 225 [1/1] (0.00ns)   --->   "br label %.preheader35" [mnist/src/hls_mnist.cpp:16->mnist/src/hls_mnist.cpp:78]   --->   Operation 225 'br' <Predicate = true> <Delay = 0.00>
+
+State 45 <SV = 3> <Delay = 1.28>
+ST_45 : Operation 226 [1/1] (0.00ns)   --->   "%k_1 = phi i6 [ %k_5, %6 ], [ 0, %Sigmoid.2.exit.preheader ]"   --->   Operation 226 'phi' 'k_1' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 227 [1/1] (1.07ns)   --->   "%exitcond5 = icmp eq i6 %k_1, -32" [mnist/src/hls_mnist.cpp:83]   --->   Operation 227 'icmp' 'exitcond5' <Predicate = true> <Delay = 1.07> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.96> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 228 [1/1] (0.00ns)   --->   "%empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind"   --->   Operation 228 'speclooptripcount' 'empty_5' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 229 [1/1] (1.28ns)   --->   "%k_5 = add i6 %k_1, 1" [mnist/src/hls_mnist.cpp:83]   --->   Operation 229 'add' 'k_5' <Predicate = true> <Delay = 1.28> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 230 [1/1] (0.00ns)   --->   "br i1 %exitcond5, label %.preheader34.preheader, label %.preheader9.preheader" [mnist/src/hls_mnist.cpp:83]   --->   Operation 230 'br' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 231 [1/1] (0.00ns)   --->   "%tmp_1 = zext i6 %k_1 to i64" [mnist/src/hls_mnist.cpp:89]   --->   Operation 231 'zext' 'tmp_1' <Predicate = (!exitcond5)> <Delay = 0.00>
+ST_45 : Operation 232 [1/1] (0.00ns)   --->   "%tmp_10 = call i12 @_ssdm_op_BitConcatenate.i12.i6.i6(i6 %k_1, i6 0)" [mnist/src/hls_mnist.cpp:83]   --->   Operation 232 'bitconcatenate' 'tmp_10' <Predicate = (!exitcond5)> <Delay = 0.00>
+ST_45 : Operation 233 [1/1] (0.00ns)   --->   "%tmp_12_cast = zext i12 %tmp_10 to i13" [mnist/src/hls_mnist.cpp:87]   --->   Operation 233 'zext' 'tmp_12_cast' <Predicate = (!exitcond5)> <Delay = 0.00>
+ST_45 : Operation 234 [1/1] (0.46ns)   --->   "br label %.preheader9" [mnist/src/hls_mnist.cpp:87]   --->   Operation 234 'br' <Predicate = (!exitcond5)> <Delay = 0.46>
+ST_45 : Operation 235 [1/1] (0.46ns)   --->   "br label %.preheader34"   --->   Operation 235 'br' <Predicate = (exitcond5)> <Delay = 0.46>
+
+State 46 <SV = 4> <Delay = 4.31>
+ST_46 : Operation 236 [1/1] (0.00ns)   --->   "%j_1 = phi i7 [ %j_4, %5 ], [ 0, %.preheader9.preheader ]"   --->   Operation 236 'phi' 'j_1' <Predicate = true> <Delay = 0.00>
+ST_46 : Operation 237 [1/1] (0.00ns)   --->   "%z2 = phi float [ %z2_2, %5 ], [ 0.000000e+00, %.preheader9.preheader ]"   --->   Operation 237 'phi' 'z2' <Predicate = true> <Delay = 0.00>
+ST_46 : Operation 238 [1/1] (1.06ns)   --->   "%exitcond4 = icmp eq i7 %j_1, -64" [mnist/src/hls_mnist.cpp:87]   --->   Operation 238 'icmp' 'exitcond4' <Predicate = true> <Delay = 1.06> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.96> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 239 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 64, i64 64, i64 64) nounwind"   --->   Operation 239 'speclooptripcount' 'empty_6' <Predicate = true> <Delay = 0.00>
+ST_46 : Operation 240 [1/1] (1.31ns)   --->   "%j_4 = add i7 %j_1, 1" [mnist/src/hls_mnist.cpp:87]   --->   Operation 240 'add' 'j_4' <Predicate = true> <Delay = 1.31> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 241 [1/1] (0.00ns)   --->   "br i1 %exitcond4, label %6, label %5" [mnist/src/hls_mnist.cpp:87]   --->   Operation 241 'br' <Predicate = true> <Delay = 0.00>
+ST_46 : Operation 242 [1/1] (0.00ns)   --->   "%tmp_s = zext i7 %j_1 to i64" [mnist/src/hls_mnist.cpp:89]   --->   Operation 242 'zext' 'tmp_s' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_46 : Operation 243 [1/1] (0.00ns)   --->   "%tmp_cast = zext i7 %j_1 to i13" [mnist/src/hls_mnist.cpp:89]   --->   Operation 243 'zext' 'tmp_cast' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_46 : Operation 244 [1/1] (1.54ns)   --->   "%tmp_11 = add i13 %tmp_12_cast, %tmp_cast" [mnist/src/hls_mnist.cpp:89]   --->   Operation 244 'add' 'tmp_11' <Predicate = (!exitcond4)> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 245 [1/1] (0.00ns)   --->   "%tmp_13_cast = zext i13 %tmp_11 to i64" [mnist/src/hls_mnist.cpp:89]   --->   Operation 245 'zext' 'tmp_13_cast' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_46 : Operation 246 [1/1] (0.00ns)   --->   "%weight2_addr = getelementptr [2048 x float]* @weight2, i64 0, i64 %tmp_13_cast" [mnist/src/hls_mnist.cpp:89]   --->   Operation 246 'getelementptr' 'weight2_addr' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_46 : Operation 247 [2/2] (2.77ns)   --->   "%weight2_load = load float* %weight2_addr, align 4" [mnist/src/hls_mnist.cpp:89]   --->   Operation 247 'load' 'weight2_load' <Predicate = (!exitcond4)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_46 : Operation 248 [1/1] (0.00ns)   --->   "%output1_addr_1 = getelementptr inbounds [64 x float]* %output1, i64 0, i64 %tmp_s" [mnist/src/hls_mnist.cpp:89]   --->   Operation 248 'getelementptr' 'output1_addr_1' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_46 : Operation 249 [2/2] (2.77ns)   --->   "%output1_load = load float* %output1_addr_1, align 4" [mnist/src/hls_mnist.cpp:89]   --->   Operation 249 'load' 'output1_load' <Predicate = (!exitcond4)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_46 : Operation 250 [1/1] (0.00ns)   --->   "%bias2_addr = getelementptr inbounds [32 x float]* @bias2, i64 0, i64 %tmp_1" [mnist/src/hls_mnist.cpp:90]   --->   Operation 250 'getelementptr' 'bias2_addr' <Predicate = (exitcond4)> <Delay = 0.00>
+ST_46 : Operation 251 [2/2] (2.77ns)   --->   "%bias2_load = load float* %bias2_addr, align 4" [mnist/src/hls_mnist.cpp:90]   --->   Operation 251 'load' 'bias2_load' <Predicate = (exitcond4)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 47 <SV = 5> <Delay = 2.77>
+ST_47 : Operation 252 [1/2] (2.77ns)   --->   "%weight2_load = load float* %weight2_addr, align 4" [mnist/src/hls_mnist.cpp:89]   --->   Operation 252 'load' 'weight2_load' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_47 : Operation 253 [1/2] (2.77ns)   --->   "%output1_load = load float* %output1_addr_1, align 4" [mnist/src/hls_mnist.cpp:89]   --->   Operation 253 'load' 'output1_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 48 <SV = 6> <Delay = 8.43>
+ST_48 : Operation 254 [3/3] (8.43ns)   --->   "%tmp_2 = fmul float %weight2_load, %output1_load" [mnist/src/hls_mnist.cpp:89]   --->   Operation 254 'fmul' 'tmp_2' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 49 <SV = 7> <Delay = 8.43>
+ST_49 : Operation 255 [2/3] (8.43ns)   --->   "%tmp_2 = fmul float %weight2_load, %output1_load" [mnist/src/hls_mnist.cpp:89]   --->   Operation 255 'fmul' 'tmp_2' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 50 <SV = 8> <Delay = 8.43>
+ST_50 : Operation 256 [1/3] (8.43ns)   --->   "%tmp_2 = fmul float %weight2_load, %output1_load" [mnist/src/hls_mnist.cpp:89]   --->   Operation 256 'fmul' 'tmp_2' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 51 <SV = 9> <Delay = 8.58>
+ST_51 : Operation 257 [4/4] (8.58ns)   --->   "%z2_2 = fadd float %z2, %tmp_2" [mnist/src/hls_mnist.cpp:89]   --->   Operation 257 'fadd' 'z2_2' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 52 <SV = 10> <Delay = 8.58>
+ST_52 : Operation 258 [3/4] (8.58ns)   --->   "%z2_2 = fadd float %z2, %tmp_2" [mnist/src/hls_mnist.cpp:89]   --->   Operation 258 'fadd' 'z2_2' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 53 <SV = 11> <Delay = 8.58>
+ST_53 : Operation 259 [2/4] (8.58ns)   --->   "%z2_2 = fadd float %z2, %tmp_2" [mnist/src/hls_mnist.cpp:89]   --->   Operation 259 'fadd' 'z2_2' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 54 <SV = 12> <Delay = 8.58>
+ST_54 : Operation 260 [1/4] (8.58ns)   --->   "%z2_2 = fadd float %z2, %tmp_2" [mnist/src/hls_mnist.cpp:89]   --->   Operation 260 'fadd' 'z2_2' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 261 [1/1] (0.00ns)   --->   "br label %.preheader9" [mnist/src/hls_mnist.cpp:87]   --->   Operation 261 'br' <Predicate = true> <Delay = 0.00>
+
+State 55 <SV = 5> <Delay = 2.77>
+ST_55 : Operation 262 [1/2] (2.77ns)   --->   "%bias2_load = load float* %bias2_addr, align 4" [mnist/src/hls_mnist.cpp:90]   --->   Operation 262 'load' 'bias2_load' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 56 <SV = 6> <Delay = 8.58>
+ST_56 : Operation 263 [4/4] (8.58ns)   --->   "%z2_1 = fadd float %z2, %bias2_load" [mnist/src/hls_mnist.cpp:90]   --->   Operation 263 'fadd' 'z2_1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 57 <SV = 7> <Delay = 8.58>
+ST_57 : Operation 264 [3/4] (8.58ns)   --->   "%z2_1 = fadd float %z2, %bias2_load" [mnist/src/hls_mnist.cpp:90]   --->   Operation 264 'fadd' 'z2_1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 58 <SV = 8> <Delay = 8.58>
+ST_58 : Operation 265 [2/4] (8.58ns)   --->   "%z2_1 = fadd float %z2, %bias2_load" [mnist/src/hls_mnist.cpp:90]   --->   Operation 265 'fadd' 'z2_1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 59 <SV = 9> <Delay = 8.58>
+ST_59 : Operation 266 [1/4] (8.58ns)   --->   "%z2_1 = fadd float %z2, %bias2_load" [mnist/src/hls_mnist.cpp:90]   --->   Operation 266 'fadd' 'z2_1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 60 <SV = 10> <Delay = 2.77>
+ST_60 : Operation 267 [1/1] (0.00ns)   --->   "%output2_addr = getelementptr inbounds [32 x float]* %output2, i64 0, i64 %tmp_1" [mnist/src/hls_mnist.cpp:91]   --->   Operation 267 'getelementptr' 'output2_addr' <Predicate = true> <Delay = 0.00>
+ST_60 : Operation 268 [1/1] (2.77ns)   --->   "store float %z2_1, float* %output2_addr, align 4" [mnist/src/hls_mnist.cpp:91]   --->   Operation 268 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_60 : Operation 269 [1/1] (0.00ns)   --->   "br label %Sigmoid.2.exit" [mnist/src/hls_mnist.cpp:83]   --->   Operation 269 'br' <Predicate = true> <Delay = 0.00>
+
+State 61 <SV = 4> <Delay = 2.77>
+ST_61 : Operation 270 [1/1] (0.00ns)   --->   "%i_i9 = phi i6 [ %i_1, %7 ], [ 0, %.preheader34.preheader ]"   --->   Operation 270 'phi' 'i_i9' <Predicate = true> <Delay = 0.00>
+ST_61 : Operation 271 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind"   --->   Operation 271 'speclooptripcount' 'empty_7' <Predicate = true> <Delay = 0.00>
+ST_61 : Operation 272 [1/1] (1.07ns)   --->   "%exitcond8 = icmp eq i6 %i_i9, -32" [mnist/src/hls_mnist.cpp:16->mnist/src/hls_mnist.cpp:94]   --->   Operation 272 'icmp' 'exitcond8' <Predicate = true> <Delay = 1.07> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.96> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_61 : Operation 273 [1/1] (1.28ns)   --->   "%i_1 = add i6 %i_i9, 1" [mnist/src/hls_mnist.cpp:16->mnist/src/hls_mnist.cpp:94]   --->   Operation 273 'add' 'i_1' <Predicate = true> <Delay = 1.28> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_61 : Operation 274 [1/1] (0.00ns)   --->   "br i1 %exitcond8, label %Sigmoid.1.exit.preheader, label %7" [mnist/src/hls_mnist.cpp:16->mnist/src/hls_mnist.cpp:94]   --->   Operation 274 'br' <Predicate = true> <Delay = 0.00>
+ST_61 : Operation 275 [1/1] (0.00ns)   --->   "%tmp_i1 = zext i6 %i_i9 to i64" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 275 'zext' 'tmp_i1' <Predicate = (!exitcond8)> <Delay = 0.00>
+ST_61 : Operation 276 [1/1] (0.00ns)   --->   "%output2_addr_2 = getelementptr [32 x float]* %output2, i64 0, i64 %tmp_i1" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 276 'getelementptr' 'output2_addr_2' <Predicate = (!exitcond8)> <Delay = 0.00>
+ST_61 : Operation 277 [2/2] (2.77ns)   --->   "%output2_load_1 = load float* %output2_addr_2, align 4" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 277 'load' 'output2_load_1' <Predicate = (!exitcond8)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_61 : Operation 278 [1/1] (0.46ns)   --->   "br label %Sigmoid.1.exit" [mnist/src/hls_mnist.cpp:97]   --->   Operation 278 'br' <Predicate = (exitcond8)> <Delay = 0.46>
+
+State 62 <SV = 5> <Delay = 2.77>
+ST_62 : Operation 279 [1/2] (2.77ns)   --->   "%output2_load_1 = load float* %output2_addr_2, align 4" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 279 'load' 'output2_load_1' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 63 <SV = 6> <Delay = 7.93>
+ST_63 : Operation 280 [1/1] (0.00ns)   --->   "%tmp_12_to_int_i1 = bitcast float %output2_load_1 to i32" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 280 'bitcast' 'tmp_12_to_int_i1' <Predicate = true> <Delay = 0.00>
+ST_63 : Operation 281 [1/1] (0.80ns)   --->   "%tmp_12_neg_i1 = xor i32 %tmp_12_to_int_i1, -2147483648" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 281 'xor' 'tmp_12_neg_i1' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_63 : Operation 282 [1/1] (0.00ns)   --->   "%tmp_12_i1 = bitcast i32 %tmp_12_neg_i1 to float" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 282 'bitcast' 'tmp_12_i1' <Predicate = true> <Delay = 0.00>
+ST_63 : Operation 283 [8/8] (7.12ns)   --->   "%tmp_13_i1 = call float @llvm.exp.f32(float %tmp_12_i1) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 283 'fexp' 'tmp_13_i1' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 64 <SV = 7> <Delay = 7.12>
+ST_64 : Operation 284 [7/8] (7.12ns)   --->   "%tmp_13_i1 = call float @llvm.exp.f32(float %tmp_12_i1) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 284 'fexp' 'tmp_13_i1' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 65 <SV = 8> <Delay = 7.12>
+ST_65 : Operation 285 [6/8] (7.12ns)   --->   "%tmp_13_i1 = call float @llvm.exp.f32(float %tmp_12_i1) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 285 'fexp' 'tmp_13_i1' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 66 <SV = 9> <Delay = 7.12>
+ST_66 : Operation 286 [5/8] (7.12ns)   --->   "%tmp_13_i1 = call float @llvm.exp.f32(float %tmp_12_i1) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 286 'fexp' 'tmp_13_i1' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 67 <SV = 10> <Delay = 7.12>
+ST_67 : Operation 287 [4/8] (7.12ns)   --->   "%tmp_13_i1 = call float @llvm.exp.f32(float %tmp_12_i1) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 287 'fexp' 'tmp_13_i1' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 68 <SV = 11> <Delay = 7.12>
+ST_68 : Operation 288 [3/8] (7.12ns)   --->   "%tmp_13_i1 = call float @llvm.exp.f32(float %tmp_12_i1) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 288 'fexp' 'tmp_13_i1' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 69 <SV = 12> <Delay = 7.12>
+ST_69 : Operation 289 [2/8] (7.12ns)   --->   "%tmp_13_i1 = call float @llvm.exp.f32(float %tmp_12_i1) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 289 'fexp' 'tmp_13_i1' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 70 <SV = 13> <Delay = 7.12>
+ST_70 : Operation 290 [1/8] (7.12ns)   --->   "%tmp_13_i1 = call float @llvm.exp.f32(float %tmp_12_i1) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 290 'fexp' 'tmp_13_i1' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 71 <SV = 14> <Delay = 8.58>
+ST_71 : Operation 291 [4/4] (8.58ns)   --->   "%tmp_14_i1 = fadd float %tmp_13_i1, 1.000000e+00" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 291 'fadd' 'tmp_14_i1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 72 <SV = 15> <Delay = 8.58>
+ST_72 : Operation 292 [3/4] (8.58ns)   --->   "%tmp_14_i1 = fadd float %tmp_13_i1, 1.000000e+00" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 292 'fadd' 'tmp_14_i1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 73 <SV = 16> <Delay = 8.58>
+ST_73 : Operation 293 [2/4] (8.58ns)   --->   "%tmp_14_i1 = fadd float %tmp_13_i1, 1.000000e+00" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 293 'fadd' 'tmp_14_i1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 74 <SV = 17> <Delay = 8.58>
+ST_74 : Operation 294 [1/4] (8.58ns)   --->   "%tmp_14_i1 = fadd float %tmp_13_i1, 1.000000e+00" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 294 'fadd' 'tmp_14_i1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 75 <SV = 18> <Delay = 7.19>
+ST_75 : Operation 295 [12/12] (7.19ns)   --->   "%tmp_15_i1 = fdiv float 1.000000e+00, %tmp_14_i1" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 295 'fdiv' 'tmp_15_i1' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 76 <SV = 19> <Delay = 7.19>
+ST_76 : Operation 296 [11/12] (7.19ns)   --->   "%tmp_15_i1 = fdiv float 1.000000e+00, %tmp_14_i1" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 296 'fdiv' 'tmp_15_i1' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 77 <SV = 20> <Delay = 7.19>
+ST_77 : Operation 297 [10/12] (7.19ns)   --->   "%tmp_15_i1 = fdiv float 1.000000e+00, %tmp_14_i1" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 297 'fdiv' 'tmp_15_i1' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 78 <SV = 21> <Delay = 7.19>
+ST_78 : Operation 298 [9/12] (7.19ns)   --->   "%tmp_15_i1 = fdiv float 1.000000e+00, %tmp_14_i1" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 298 'fdiv' 'tmp_15_i1' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 79 <SV = 22> <Delay = 7.19>
+ST_79 : Operation 299 [8/12] (7.19ns)   --->   "%tmp_15_i1 = fdiv float 1.000000e+00, %tmp_14_i1" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 299 'fdiv' 'tmp_15_i1' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 80 <SV = 23> <Delay = 7.19>
+ST_80 : Operation 300 [7/12] (7.19ns)   --->   "%tmp_15_i1 = fdiv float 1.000000e+00, %tmp_14_i1" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 300 'fdiv' 'tmp_15_i1' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 81 <SV = 24> <Delay = 7.19>
+ST_81 : Operation 301 [6/12] (7.19ns)   --->   "%tmp_15_i1 = fdiv float 1.000000e+00, %tmp_14_i1" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 301 'fdiv' 'tmp_15_i1' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 82 <SV = 25> <Delay = 7.19>
+ST_82 : Operation 302 [5/12] (7.19ns)   --->   "%tmp_15_i1 = fdiv float 1.000000e+00, %tmp_14_i1" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 302 'fdiv' 'tmp_15_i1' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 83 <SV = 26> <Delay = 7.19>
+ST_83 : Operation 303 [4/12] (7.19ns)   --->   "%tmp_15_i1 = fdiv float 1.000000e+00, %tmp_14_i1" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 303 'fdiv' 'tmp_15_i1' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 84 <SV = 27> <Delay = 7.19>
+ST_84 : Operation 304 [3/12] (7.19ns)   --->   "%tmp_15_i1 = fdiv float 1.000000e+00, %tmp_14_i1" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 304 'fdiv' 'tmp_15_i1' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 85 <SV = 28> <Delay = 7.19>
+ST_85 : Operation 305 [2/12] (7.19ns)   --->   "%tmp_15_i1 = fdiv float 1.000000e+00, %tmp_14_i1" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 305 'fdiv' 'tmp_15_i1' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 86 <SV = 29> <Delay = 7.19>
+ST_86 : Operation 306 [1/12] (7.19ns)   --->   "%tmp_15_i1 = fdiv float 1.000000e+00, %tmp_14_i1" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 306 'fdiv' 'tmp_15_i1' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 87 <SV = 30> <Delay = 2.77>
+ST_87 : Operation 307 [1/1] (2.77ns)   --->   "store float %tmp_15_i1, float* %output2_addr_2, align 4" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94]   --->   Operation 307 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_87 : Operation 308 [1/1] (0.00ns)   --->   "br label %.preheader34" [mnist/src/hls_mnist.cpp:16->mnist/src/hls_mnist.cpp:94]   --->   Operation 308 'br' <Predicate = true> <Delay = 0.00>
+
+State 88 <SV = 5> <Delay = 0.99>
+ST_88 : Operation 309 [1/1] (0.00ns)   --->   "%k_2 = phi i4 [ %k_7, %9 ], [ 0, %Sigmoid.1.exit.preheader ]"   --->   Operation 309 'phi' 'k_2' <Predicate = true> <Delay = 0.00>
+ST_88 : Operation 310 [1/1] (0.96ns)   --->   "%exitcond3 = icmp eq i4 %k_2, -6" [mnist/src/hls_mnist.cpp:97]   --->   Operation 310 'icmp' 'exitcond3' <Predicate = true> <Delay = 0.96> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.96> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_88 : Operation 311 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10) nounwind"   --->   Operation 311 'speclooptripcount' 'empty_8' <Predicate = true> <Delay = 0.00>
+ST_88 : Operation 312 [1/1] (0.99ns)   --->   "%k_7 = add i4 %k_2, 1" [mnist/src/hls_mnist.cpp:97]   --->   Operation 312 'add' 'k_7' <Predicate = true> <Delay = 0.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_88 : Operation 313 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %.preheader33.preheader, label %.preheader8.preheader" [mnist/src/hls_mnist.cpp:97]   --->   Operation 313 'br' <Predicate = true> <Delay = 0.00>
+ST_88 : Operation 314 [1/1] (0.00ns)   --->   "%tmp_8 = zext i4 %k_2 to i64" [mnist/src/hls_mnist.cpp:103]   --->   Operation 314 'zext' 'tmp_8' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_88 : Operation 315 [1/1] (0.00ns)   --->   "%tmp_12 = call i9 @_ssdm_op_BitConcatenate.i9.i4.i5(i4 %k_2, i5 0)" [mnist/src/hls_mnist.cpp:97]   --->   Operation 315 'bitconcatenate' 'tmp_12' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_88 : Operation 316 [1/1] (0.00ns)   --->   "%tmp_15_cast = zext i9 %tmp_12 to i10" [mnist/src/hls_mnist.cpp:101]   --->   Operation 316 'zext' 'tmp_15_cast' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_88 : Operation 317 [1/1] (0.46ns)   --->   "br label %.preheader8" [mnist/src/hls_mnist.cpp:101]   --->   Operation 317 'br' <Predicate = (!exitcond3)> <Delay = 0.46>
+ST_88 : Operation 318 [1/1] (0.46ns)   --->   "br label %.preheader33"   --->   Operation 318 'br' <Predicate = (exitcond3)> <Delay = 0.46>
+
+State 89 <SV = 6> <Delay = 4.13>
+ST_89 : Operation 319 [1/1] (0.00ns)   --->   "%j_2 = phi i6 [ %j_5, %8 ], [ 0, %.preheader8.preheader ]"   --->   Operation 319 'phi' 'j_2' <Predicate = true> <Delay = 0.00>
+ST_89 : Operation 320 [1/1] (0.00ns)   --->   "%z3 = phi float [ %z3_2, %8 ], [ 0.000000e+00, %.preheader8.preheader ]"   --->   Operation 320 'phi' 'z3' <Predicate = true> <Delay = 0.00>
+ST_89 : Operation 321 [1/1] (1.07ns)   --->   "%exitcond2 = icmp eq i6 %j_2, -32" [mnist/src/hls_mnist.cpp:101]   --->   Operation 321 'icmp' 'exitcond2' <Predicate = true> <Delay = 1.07> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.96> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_89 : Operation 322 [1/1] (0.00ns)   --->   "%empty_9 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind"   --->   Operation 322 'speclooptripcount' 'empty_9' <Predicate = true> <Delay = 0.00>
+ST_89 : Operation 323 [1/1] (1.28ns)   --->   "%j_5 = add i6 %j_2, 1" [mnist/src/hls_mnist.cpp:101]   --->   Operation 323 'add' 'j_5' <Predicate = true> <Delay = 1.28> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_89 : Operation 324 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %9, label %8" [mnist/src/hls_mnist.cpp:101]   --->   Operation 324 'br' <Predicate = true> <Delay = 0.00>
+ST_89 : Operation 325 [1/1] (0.00ns)   --->   "%tmp_6 = zext i6 %j_2 to i64" [mnist/src/hls_mnist.cpp:103]   --->   Operation 325 'zext' 'tmp_6' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_89 : Operation 326 [1/1] (0.00ns)   --->   "%tmp_6_cast = zext i6 %j_2 to i10" [mnist/src/hls_mnist.cpp:103]   --->   Operation 326 'zext' 'tmp_6_cast' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_89 : Operation 327 [1/1] (1.36ns)   --->   "%tmp_13 = add i10 %tmp_15_cast, %tmp_6_cast" [mnist/src/hls_mnist.cpp:103]   --->   Operation 327 'add' 'tmp_13' <Predicate = (!exitcond2)> <Delay = 1.36> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_89 : Operation 328 [1/1] (0.00ns)   --->   "%tmp_16_cast = zext i10 %tmp_13 to i64" [mnist/src/hls_mnist.cpp:103]   --->   Operation 328 'zext' 'tmp_16_cast' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_89 : Operation 329 [1/1] (0.00ns)   --->   "%weight3_addr = getelementptr [320 x float]* @weight3, i64 0, i64 %tmp_16_cast" [mnist/src/hls_mnist.cpp:103]   --->   Operation 329 'getelementptr' 'weight3_addr' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_89 : Operation 330 [2/2] (2.77ns)   --->   "%weight3_load = load float* %weight3_addr, align 4" [mnist/src/hls_mnist.cpp:103]   --->   Operation 330 'load' 'weight3_load' <Predicate = (!exitcond2)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_89 : Operation 331 [1/1] (0.00ns)   --->   "%output2_addr_1 = getelementptr inbounds [32 x float]* %output2, i64 0, i64 %tmp_6" [mnist/src/hls_mnist.cpp:103]   --->   Operation 331 'getelementptr' 'output2_addr_1' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_89 : Operation 332 [2/2] (2.77ns)   --->   "%output2_load = load float* %output2_addr_1, align 4" [mnist/src/hls_mnist.cpp:103]   --->   Operation 332 'load' 'output2_load' <Predicate = (!exitcond2)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_89 : Operation 333 [1/1] (0.00ns)   --->   "%bias3_addr = getelementptr inbounds [10 x float]* @bias3, i64 0, i64 %tmp_8" [mnist/src/hls_mnist.cpp:104]   --->   Operation 333 'getelementptr' 'bias3_addr' <Predicate = (exitcond2)> <Delay = 0.00>
+ST_89 : Operation 334 [2/2] (2.77ns)   --->   "%bias3_load = load float* %bias3_addr, align 4" [mnist/src/hls_mnist.cpp:104]   --->   Operation 334 'load' 'bias3_load' <Predicate = (exitcond2)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 90 <SV = 7> <Delay = 2.77>
+ST_90 : Operation 335 [1/2] (2.77ns)   --->   "%weight3_load = load float* %weight3_addr, align 4" [mnist/src/hls_mnist.cpp:103]   --->   Operation 335 'load' 'weight3_load' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_90 : Operation 336 [1/2] (2.77ns)   --->   "%output2_load = load float* %output2_addr_1, align 4" [mnist/src/hls_mnist.cpp:103]   --->   Operation 336 'load' 'output2_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 91 <SV = 8> <Delay = 8.43>
+ST_91 : Operation 337 [3/3] (8.43ns)   --->   "%tmp_7 = fmul float %weight3_load, %output2_load" [mnist/src/hls_mnist.cpp:103]   --->   Operation 337 'fmul' 'tmp_7' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 92 <SV = 9> <Delay = 8.43>
+ST_92 : Operation 338 [2/3] (8.43ns)   --->   "%tmp_7 = fmul float %weight3_load, %output2_load" [mnist/src/hls_mnist.cpp:103]   --->   Operation 338 'fmul' 'tmp_7' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 93 <SV = 10> <Delay = 8.43>
+ST_93 : Operation 339 [1/3] (8.43ns)   --->   "%tmp_7 = fmul float %weight3_load, %output2_load" [mnist/src/hls_mnist.cpp:103]   --->   Operation 339 'fmul' 'tmp_7' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 94 <SV = 11> <Delay = 8.58>
+ST_94 : Operation 340 [4/4] (8.58ns)   --->   "%z3_2 = fadd float %z3, %tmp_7" [mnist/src/hls_mnist.cpp:103]   --->   Operation 340 'fadd' 'z3_2' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 95 <SV = 12> <Delay = 8.58>
+ST_95 : Operation 341 [3/4] (8.58ns)   --->   "%z3_2 = fadd float %z3, %tmp_7" [mnist/src/hls_mnist.cpp:103]   --->   Operation 341 'fadd' 'z3_2' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 96 <SV = 13> <Delay = 8.58>
+ST_96 : Operation 342 [2/4] (8.58ns)   --->   "%z3_2 = fadd float %z3, %tmp_7" [mnist/src/hls_mnist.cpp:103]   --->   Operation 342 'fadd' 'z3_2' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 97 <SV = 14> <Delay = 8.58>
+ST_97 : Operation 343 [1/4] (8.58ns)   --->   "%z3_2 = fadd float %z3, %tmp_7" [mnist/src/hls_mnist.cpp:103]   --->   Operation 343 'fadd' 'z3_2' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_97 : Operation 344 [1/1] (0.00ns)   --->   "br label %.preheader8" [mnist/src/hls_mnist.cpp:101]   --->   Operation 344 'br' <Predicate = true> <Delay = 0.00>
+
+State 98 <SV = 7> <Delay = 2.77>
+ST_98 : Operation 345 [1/2] (2.77ns)   --->   "%bias3_load = load float* %bias3_addr, align 4" [mnist/src/hls_mnist.cpp:104]   --->   Operation 345 'load' 'bias3_load' <Predicate = true> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 99 <SV = 8> <Delay = 8.58>
+ST_99 : Operation 346 [4/4] (8.58ns)   --->   "%z3_1 = fadd float %z3, %bias3_load" [mnist/src/hls_mnist.cpp:104]   --->   Operation 346 'fadd' 'z3_1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 100 <SV = 9> <Delay = 8.58>
+ST_100 : Operation 347 [3/4] (8.58ns)   --->   "%z3_1 = fadd float %z3, %bias3_load" [mnist/src/hls_mnist.cpp:104]   --->   Operation 347 'fadd' 'z3_1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 101 <SV = 10> <Delay = 8.58>
+ST_101 : Operation 348 [2/4] (8.58ns)   --->   "%z3_1 = fadd float %z3, %bias3_load" [mnist/src/hls_mnist.cpp:104]   --->   Operation 348 'fadd' 'z3_1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 102 <SV = 11> <Delay = 8.58>
+ST_102 : Operation 349 [1/4] (8.58ns)   --->   "%z3_1 = fadd float %z3, %bias3_load" [mnist/src/hls_mnist.cpp:104]   --->   Operation 349 'fadd' 'z3_1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 103 <SV = 12> <Delay = 1.75>
+ST_103 : Operation 350 [1/1] (0.00ns)   --->   "%output3_addr_1 = getelementptr inbounds [10 x float]* %output3, i64 0, i64 %tmp_8" [mnist/src/hls_mnist.cpp:105]   --->   Operation 350 'getelementptr' 'output3_addr_1' <Predicate = true> <Delay = 0.00>
+ST_103 : Operation 351 [1/1] (1.75ns)   --->   "store float %z3_1, float* %output3_addr_1, align 4" [mnist/src/hls_mnist.cpp:105]   --->   Operation 351 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_103 : Operation 352 [1/1] (0.00ns)   --->   "br label %Sigmoid.1.exit" [mnist/src/hls_mnist.cpp:97]   --->   Operation 352 'br' <Predicate = true> <Delay = 0.00>
+
+State 104 <SV = 6> <Delay = 1.75>
+ST_104 : Operation 353 [1/1] (0.00ns)   --->   "%i_i1 = phi i4 [ %i_2, %10 ], [ 0, %.preheader33.preheader ]"   --->   Operation 353 'phi' 'i_i1' <Predicate = true> <Delay = 0.00>
+ST_104 : Operation 354 [1/1] (0.00ns)   --->   "%empty_10 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10) nounwind"   --->   Operation 354 'speclooptripcount' 'empty_10' <Predicate = true> <Delay = 0.00>
+ST_104 : Operation 355 [1/1] (0.96ns)   --->   "%exitcond9 = icmp eq i4 %i_i1, -6" [mnist/src/hls_mnist.cpp:16->mnist/src/hls_mnist.cpp:109]   --->   Operation 355 'icmp' 'exitcond9' <Predicate = true> <Delay = 0.96> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.96> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_104 : Operation 356 [1/1] (0.99ns)   --->   "%i_2 = add i4 %i_i1, 1" [mnist/src/hls_mnist.cpp:16->mnist/src/hls_mnist.cpp:109]   --->   Operation 356 'add' 'i_2' <Predicate = true> <Delay = 0.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_104 : Operation 357 [1/1] (0.00ns)   --->   "br i1 %exitcond9, label %Sigmoid.exit.preheader, label %10" [mnist/src/hls_mnist.cpp:16->mnist/src/hls_mnist.cpp:109]   --->   Operation 357 'br' <Predicate = true> <Delay = 0.00>
+ST_104 : Operation 358 [1/1] (0.00ns)   --->   "%tmp_i2 = zext i4 %i_i1 to i64" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 358 'zext' 'tmp_i2' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_104 : Operation 359 [1/1] (0.00ns)   --->   "%output3_addr_2 = getelementptr [10 x float]* %output3, i64 0, i64 %tmp_i2" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 359 'getelementptr' 'output3_addr_2' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_104 : Operation 360 [2/2] (1.75ns)   --->   "%output3_load_1 = load float* %output3_addr_2, align 4" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 360 'load' 'output3_load_1' <Predicate = (!exitcond9)> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_104 : Operation 361 [1/1] (0.46ns)   --->   "br label %Sigmoid.exit" [mnist/src/hls_mnist.cpp:111]   --->   Operation 361 'br' <Predicate = (exitcond9)> <Delay = 0.46>
+
+State 105 <SV = 7> <Delay = 1.75>
+ST_105 : Operation 362 [1/2] (1.75ns)   --->   "%output3_load_1 = load float* %output3_addr_2, align 4" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 362 'load' 'output3_load_1' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 106 <SV = 8> <Delay = 7.93>
+ST_106 : Operation 363 [1/1] (0.00ns)   --->   "%tmp_12_to_int_i2 = bitcast float %output3_load_1 to i32" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 363 'bitcast' 'tmp_12_to_int_i2' <Predicate = true> <Delay = 0.00>
+ST_106 : Operation 364 [1/1] (0.80ns)   --->   "%tmp_12_neg_i2 = xor i32 %tmp_12_to_int_i2, -2147483648" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 364 'xor' 'tmp_12_neg_i2' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_106 : Operation 365 [1/1] (0.00ns)   --->   "%tmp_12_i2 = bitcast i32 %tmp_12_neg_i2 to float" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 365 'bitcast' 'tmp_12_i2' <Predicate = true> <Delay = 0.00>
+ST_106 : Operation 366 [8/8] (7.12ns)   --->   "%tmp_13_i2 = call float @llvm.exp.f32(float %tmp_12_i2) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 366 'fexp' 'tmp_13_i2' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 107 <SV = 9> <Delay = 7.12>
+ST_107 : Operation 367 [7/8] (7.12ns)   --->   "%tmp_13_i2 = call float @llvm.exp.f32(float %tmp_12_i2) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 367 'fexp' 'tmp_13_i2' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 108 <SV = 10> <Delay = 7.12>
+ST_108 : Operation 368 [6/8] (7.12ns)   --->   "%tmp_13_i2 = call float @llvm.exp.f32(float %tmp_12_i2) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 368 'fexp' 'tmp_13_i2' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 109 <SV = 11> <Delay = 7.12>
+ST_109 : Operation 369 [5/8] (7.12ns)   --->   "%tmp_13_i2 = call float @llvm.exp.f32(float %tmp_12_i2) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 369 'fexp' 'tmp_13_i2' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 110 <SV = 12> <Delay = 7.12>
+ST_110 : Operation 370 [4/8] (7.12ns)   --->   "%tmp_13_i2 = call float @llvm.exp.f32(float %tmp_12_i2) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 370 'fexp' 'tmp_13_i2' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 111 <SV = 13> <Delay = 7.12>
+ST_111 : Operation 371 [3/8] (7.12ns)   --->   "%tmp_13_i2 = call float @llvm.exp.f32(float %tmp_12_i2) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 371 'fexp' 'tmp_13_i2' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 112 <SV = 14> <Delay = 7.12>
+ST_112 : Operation 372 [2/8] (7.12ns)   --->   "%tmp_13_i2 = call float @llvm.exp.f32(float %tmp_12_i2) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 372 'fexp' 'tmp_13_i2' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 113 <SV = 15> <Delay = 7.12>
+ST_113 : Operation 373 [1/8] (7.12ns)   --->   "%tmp_13_i2 = call float @llvm.exp.f32(float %tmp_12_i2) nounwind" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 373 'fexp' 'tmp_13_i2' <Predicate = true> <Delay = 7.12> <Core = "FExp">   --->   Core 126 'FExp' <Latency = 7> <II = 1> <Delay = 7.12> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 114 <SV = 16> <Delay = 8.58>
+ST_114 : Operation 374 [4/4] (8.58ns)   --->   "%tmp_14_i2 = fadd float %tmp_13_i2, 1.000000e+00" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 374 'fadd' 'tmp_14_i2' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 115 <SV = 17> <Delay = 8.58>
+ST_115 : Operation 375 [3/4] (8.58ns)   --->   "%tmp_14_i2 = fadd float %tmp_13_i2, 1.000000e+00" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 375 'fadd' 'tmp_14_i2' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 116 <SV = 18> <Delay = 8.58>
+ST_116 : Operation 376 [2/4] (8.58ns)   --->   "%tmp_14_i2 = fadd float %tmp_13_i2, 1.000000e+00" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 376 'fadd' 'tmp_14_i2' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 117 <SV = 19> <Delay = 8.58>
+ST_117 : Operation 377 [1/4] (8.58ns)   --->   "%tmp_14_i2 = fadd float %tmp_13_i2, 1.000000e+00" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 377 'fadd' 'tmp_14_i2' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 118 <SV = 20> <Delay = 7.19>
+ST_118 : Operation 378 [12/12] (7.19ns)   --->   "%tmp_15_i2 = fdiv float 1.000000e+00, %tmp_14_i2" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 378 'fdiv' 'tmp_15_i2' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 119 <SV = 21> <Delay = 7.19>
+ST_119 : Operation 379 [11/12] (7.19ns)   --->   "%tmp_15_i2 = fdiv float 1.000000e+00, %tmp_14_i2" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 379 'fdiv' 'tmp_15_i2' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 120 <SV = 22> <Delay = 7.19>
+ST_120 : Operation 380 [10/12] (7.19ns)   --->   "%tmp_15_i2 = fdiv float 1.000000e+00, %tmp_14_i2" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 380 'fdiv' 'tmp_15_i2' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 121 <SV = 23> <Delay = 7.19>
+ST_121 : Operation 381 [9/12] (7.19ns)   --->   "%tmp_15_i2 = fdiv float 1.000000e+00, %tmp_14_i2" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 381 'fdiv' 'tmp_15_i2' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 122 <SV = 24> <Delay = 7.19>
+ST_122 : Operation 382 [8/12] (7.19ns)   --->   "%tmp_15_i2 = fdiv float 1.000000e+00, %tmp_14_i2" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 382 'fdiv' 'tmp_15_i2' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 123 <SV = 25> <Delay = 7.19>
+ST_123 : Operation 383 [7/12] (7.19ns)   --->   "%tmp_15_i2 = fdiv float 1.000000e+00, %tmp_14_i2" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 383 'fdiv' 'tmp_15_i2' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 124 <SV = 26> <Delay = 7.19>
+ST_124 : Operation 384 [6/12] (7.19ns)   --->   "%tmp_15_i2 = fdiv float 1.000000e+00, %tmp_14_i2" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 384 'fdiv' 'tmp_15_i2' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 125 <SV = 27> <Delay = 7.19>
+ST_125 : Operation 385 [5/12] (7.19ns)   --->   "%tmp_15_i2 = fdiv float 1.000000e+00, %tmp_14_i2" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 385 'fdiv' 'tmp_15_i2' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 126 <SV = 28> <Delay = 7.19>
+ST_126 : Operation 386 [4/12] (7.19ns)   --->   "%tmp_15_i2 = fdiv float 1.000000e+00, %tmp_14_i2" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 386 'fdiv' 'tmp_15_i2' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 127 <SV = 29> <Delay = 7.19>
+ST_127 : Operation 387 [3/12] (7.19ns)   --->   "%tmp_15_i2 = fdiv float 1.000000e+00, %tmp_14_i2" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 387 'fdiv' 'tmp_15_i2' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 128 <SV = 30> <Delay = 7.19>
+ST_128 : Operation 388 [2/12] (7.19ns)   --->   "%tmp_15_i2 = fdiv float 1.000000e+00, %tmp_14_i2" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 388 'fdiv' 'tmp_15_i2' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 129 <SV = 31> <Delay = 7.19>
+ST_129 : Operation 389 [1/12] (7.19ns)   --->   "%tmp_15_i2 = fdiv float 1.000000e+00, %tmp_14_i2" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 389 'fdiv' 'tmp_15_i2' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 106 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 130 <SV = 32> <Delay = 1.75>
+ST_130 : Operation 390 [1/1] (1.75ns)   --->   "store float %tmp_15_i2, float* %output3_addr_2, align 4" [mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109]   --->   Operation 390 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_130 : Operation 391 [1/1] (0.00ns)   --->   "br label %.preheader33" [mnist/src/hls_mnist.cpp:16->mnist/src/hls_mnist.cpp:109]   --->   Operation 391 'br' <Predicate = true> <Delay = 0.00>
+
+State 131 <SV = 7> <Delay = 1.75>
+ST_131 : Operation 392 [1/1] (0.00ns)   --->   "%k_3 = phi i4 [ %k_6, %11 ], [ 0, %Sigmoid.exit.preheader ]"   --->   Operation 392 'phi' 'k_3' <Predicate = true> <Delay = 0.00>
+ST_131 : Operation 393 [1/1] (0.96ns)   --->   "%exitcond1 = icmp eq i4 %k_3, -6" [mnist/src/hls_mnist.cpp:111]   --->   Operation 393 'icmp' 'exitcond1' <Predicate = true> <Delay = 0.96> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.96> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_131 : Operation 394 [1/1] (0.00ns)   --->   "%empty_11 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10) nounwind"   --->   Operation 394 'speclooptripcount' 'empty_11' <Predicate = true> <Delay = 0.00>
+ST_131 : Operation 395 [1/1] (0.99ns)   --->   "%k_6 = add i4 %k_3, 1" [mnist/src/hls_mnist.cpp:111]   --->   Operation 395 'add' 'k_6' <Predicate = true> <Delay = 0.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_131 : Operation 396 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.preheader.preheader, label %11" [mnist/src/hls_mnist.cpp:111]   --->   Operation 396 'br' <Predicate = true> <Delay = 0.00>
+ST_131 : Operation 397 [1/1] (0.00ns)   --->   "%tmp_3 = zext i4 %k_3 to i64" [mnist/src/hls_mnist.cpp:112]   --->   Operation 397 'zext' 'tmp_3' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_131 : Operation 398 [1/1] (0.00ns)   --->   "%output3_addr = getelementptr inbounds [10 x float]* %output3, i64 0, i64 %tmp_3" [mnist/src/hls_mnist.cpp:112]   --->   Operation 398 'getelementptr' 'output3_addr' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_131 : Operation 399 [2/2] (1.75ns)   --->   "%output3_load = load float* %output3_addr, align 4" [mnist/src/hls_mnist.cpp:112]   --->   Operation 399 'load' 'output3_load' <Predicate = (!exitcond1)> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_131 : Operation 400 [1/1] (0.00ns)   --->   "ret void" [mnist/src/hls_mnist.cpp:124]   --->   Operation 400 'ret' <Predicate = (exitcond1)> <Delay = 0.00>
+
+State 132 <SV = 8> <Delay = 3.51>
+ST_132 : Operation 401 [1/2] (1.75ns)   --->   "%output3_load = load float* %output3_addr, align 4" [mnist/src/hls_mnist.cpp:112]   --->   Operation 401 'load' 'output3_load' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_132 : Operation 402 [1/1] (0.00ns)   --->   "%output_addr = getelementptr [10 x float]* %output_r, i64 0, i64 %tmp_3" [mnist/src/hls_mnist.cpp:112]   --->   Operation 402 'getelementptr' 'output_addr' <Predicate = true> <Delay = 0.00>
+ST_132 : Operation 403 [1/1] (1.75ns)   --->   "store float %output3_load, float* %output_addr, align 4" [mnist/src/hls_mnist.cpp:112]   --->   Operation 403 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_132 : Operation 404 [1/1] (0.00ns)   --->   "br label %Sigmoid.exit" [mnist/src/hls_mnist.cpp:111]   --->   Operation 404 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 0.466ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('k') with incoming values : ('k', mnist/src/hls_mnist.cpp:67) [20]  (0.466 ns)
+
+ <State 2>: 1.54ns
+The critical path consists of the following:
+	'phi' operation ('phi_mul') with incoming values : ('next_mul') [21]  (0 ns)
+	'add' operation ('next_mul') [22]  (1.54 ns)
+
+ <State 3>: 4.32ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', mnist/src/hls_mnist.cpp:71) [32]  (0 ns)
+	'add' operation ('tmp_9', mnist/src/hls_mnist.cpp:73) [40]  (1.54 ns)
+	'getelementptr' operation ('weight1_addr', mnist/src/hls_mnist.cpp:73) [42]  (0 ns)
+	'load' operation ('weight1_load', mnist/src/hls_mnist.cpp:73) on array 'weight1' [43]  (2.77 ns)
+
+ <State 4>: 2.77ns
+The critical path consists of the following:
+	'load' operation ('weight1_load', mnist/src/hls_mnist.cpp:73) on array 'weight1' [43]  (2.77 ns)
+
+ <State 5>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_5', mnist/src/hls_mnist.cpp:73) [46]  (8.43 ns)
+
+ <State 6>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_5', mnist/src/hls_mnist.cpp:73) [46]  (8.43 ns)
+
+ <State 7>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_5', mnist/src/hls_mnist.cpp:73) [46]  (8.43 ns)
+
+ <State 8>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z1', mnist/src/hls_mnist.cpp:73) [47]  (8.59 ns)
+
+ <State 9>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z1', mnist/src/hls_mnist.cpp:73) [47]  (8.59 ns)
+
+ <State 10>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z1', mnist/src/hls_mnist.cpp:73) [47]  (8.59 ns)
+
+ <State 11>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z1', mnist/src/hls_mnist.cpp:73) [47]  (8.59 ns)
+
+ <State 12>: 2.77ns
+The critical path consists of the following:
+	'load' operation ('bias1_load', mnist/src/hls_mnist.cpp:74) on array 'bias1' [51]  (2.77 ns)
+
+ <State 13>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z1', mnist/src/hls_mnist.cpp:74) [52]  (8.59 ns)
+
+ <State 14>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z1', mnist/src/hls_mnist.cpp:74) [52]  (8.59 ns)
+
+ <State 15>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z1', mnist/src/hls_mnist.cpp:74) [52]  (8.59 ns)
+
+ <State 16>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z1', mnist/src/hls_mnist.cpp:74) [52]  (8.59 ns)
+
+ <State 17>: 2.77ns
+The critical path consists of the following:
+	'getelementptr' operation ('output1_addr', mnist/src/hls_mnist.cpp:75) [53]  (0 ns)
+	'store' operation (mnist/src/hls_mnist.cpp:75) of variable 'z1', mnist/src/hls_mnist.cpp:74 on array 'a', mnist/src/hls_mnist.cpp:54 [54]  (2.77 ns)
+
+ <State 18>: 2.77ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', mnist/src/hls_mnist.cpp:16->mnist/src/hls_mnist.cpp:78) [59]  (0 ns)
+	'getelementptr' operation ('output1_addr_2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [66]  (0 ns)
+	'load' operation ('output1_load_1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) on array 'a', mnist/src/hls_mnist.cpp:54 [67]  (2.77 ns)
+
+ <State 19>: 2.77ns
+The critical path consists of the following:
+	'load' operation ('output1_load_1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) on array 'a', mnist/src/hls_mnist.cpp:54 [67]  (2.77 ns)
+
+ <State 20>: 7.94ns
+The critical path consists of the following:
+	'xor' operation ('tmp_12_neg_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [69]  (0.808 ns)
+	'fexp' operation ('tmp_13_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [71]  (7.13 ns)
+
+ <State 21>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [71]  (7.13 ns)
+
+ <State 22>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [71]  (7.13 ns)
+
+ <State 23>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [71]  (7.13 ns)
+
+ <State 24>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [71]  (7.13 ns)
+
+ <State 25>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [71]  (7.13 ns)
+
+ <State 26>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [71]  (7.13 ns)
+
+ <State 27>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [71]  (7.13 ns)
+
+ <State 28>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_14_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [72]  (8.59 ns)
+
+ <State 29>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_14_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [72]  (8.59 ns)
+
+ <State 30>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_14_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [72]  (8.59 ns)
+
+ <State 31>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_14_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [72]  (8.59 ns)
+
+ <State 32>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [73]  (7.2 ns)
+
+ <State 33>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [73]  (7.2 ns)
+
+ <State 34>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [73]  (7.2 ns)
+
+ <State 35>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [73]  (7.2 ns)
+
+ <State 36>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [73]  (7.2 ns)
+
+ <State 37>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [73]  (7.2 ns)
+
+ <State 38>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [73]  (7.2 ns)
+
+ <State 39>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [73]  (7.2 ns)
+
+ <State 40>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [73]  (7.2 ns)
+
+ <State 41>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [73]  (7.2 ns)
+
+ <State 42>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [73]  (7.2 ns)
+
+ <State 43>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) [73]  (7.2 ns)
+
+ <State 44>: 2.77ns
+The critical path consists of the following:
+	'store' operation (mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78) of variable 'tmp_15_i', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:78 on array 'a', mnist/src/hls_mnist.cpp:54 [74]  (2.77 ns)
+
+ <State 45>: 1.28ns
+The critical path consists of the following:
+	'phi' operation ('k') with incoming values : ('k', mnist/src/hls_mnist.cpp:83) [79]  (0 ns)
+	'add' operation ('k', mnist/src/hls_mnist.cpp:83) [82]  (1.28 ns)
+
+ <State 46>: 4.32ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', mnist/src/hls_mnist.cpp:87) [90]  (0 ns)
+	'add' operation ('tmp_11', mnist/src/hls_mnist.cpp:89) [99]  (1.55 ns)
+	'getelementptr' operation ('weight2_addr', mnist/src/hls_mnist.cpp:89) [101]  (0 ns)
+	'load' operation ('weight2_load', mnist/src/hls_mnist.cpp:89) on array 'weight2' [102]  (2.77 ns)
+
+ <State 47>: 2.77ns
+The critical path consists of the following:
+	'load' operation ('weight2_load', mnist/src/hls_mnist.cpp:89) on array 'weight2' [102]  (2.77 ns)
+
+ <State 48>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_2', mnist/src/hls_mnist.cpp:89) [105]  (8.43 ns)
+
+ <State 49>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_2', mnist/src/hls_mnist.cpp:89) [105]  (8.43 ns)
+
+ <State 50>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_2', mnist/src/hls_mnist.cpp:89) [105]  (8.43 ns)
+
+ <State 51>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z2', mnist/src/hls_mnist.cpp:89) [106]  (8.59 ns)
+
+ <State 52>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z2', mnist/src/hls_mnist.cpp:89) [106]  (8.59 ns)
+
+ <State 53>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z2', mnist/src/hls_mnist.cpp:89) [106]  (8.59 ns)
+
+ <State 54>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z2', mnist/src/hls_mnist.cpp:89) [106]  (8.59 ns)
+
+ <State 55>: 2.77ns
+The critical path consists of the following:
+	'load' operation ('bias2_load', mnist/src/hls_mnist.cpp:90) on array 'bias2' [110]  (2.77 ns)
+
+ <State 56>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z2', mnist/src/hls_mnist.cpp:90) [111]  (8.59 ns)
+
+ <State 57>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z2', mnist/src/hls_mnist.cpp:90) [111]  (8.59 ns)
+
+ <State 58>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z2', mnist/src/hls_mnist.cpp:90) [111]  (8.59 ns)
+
+ <State 59>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z2', mnist/src/hls_mnist.cpp:90) [111]  (8.59 ns)
+
+ <State 60>: 2.77ns
+The critical path consists of the following:
+	'getelementptr' operation ('output2_addr', mnist/src/hls_mnist.cpp:91) [112]  (0 ns)
+	'store' operation (mnist/src/hls_mnist.cpp:91) of variable 'z2', mnist/src/hls_mnist.cpp:90 on array 'a', mnist/src/hls_mnist.cpp:55 [113]  (2.77 ns)
+
+ <State 61>: 2.77ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', mnist/src/hls_mnist.cpp:16->mnist/src/hls_mnist.cpp:94) [118]  (0 ns)
+	'getelementptr' operation ('output2_addr_2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [125]  (0 ns)
+	'load' operation ('output2_load_1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) on array 'a', mnist/src/hls_mnist.cpp:55 [126]  (2.77 ns)
+
+ <State 62>: 2.77ns
+The critical path consists of the following:
+	'load' operation ('output2_load_1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) on array 'a', mnist/src/hls_mnist.cpp:55 [126]  (2.77 ns)
+
+ <State 63>: 7.94ns
+The critical path consists of the following:
+	'xor' operation ('tmp_12_neg_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [128]  (0.808 ns)
+	'fexp' operation ('tmp_13_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [130]  (7.13 ns)
+
+ <State 64>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [130]  (7.13 ns)
+
+ <State 65>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [130]  (7.13 ns)
+
+ <State 66>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [130]  (7.13 ns)
+
+ <State 67>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [130]  (7.13 ns)
+
+ <State 68>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [130]  (7.13 ns)
+
+ <State 69>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [130]  (7.13 ns)
+
+ <State 70>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [130]  (7.13 ns)
+
+ <State 71>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_14_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [131]  (8.59 ns)
+
+ <State 72>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_14_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [131]  (8.59 ns)
+
+ <State 73>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_14_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [131]  (8.59 ns)
+
+ <State 74>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_14_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [131]  (8.59 ns)
+
+ <State 75>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [132]  (7.2 ns)
+
+ <State 76>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [132]  (7.2 ns)
+
+ <State 77>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [132]  (7.2 ns)
+
+ <State 78>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [132]  (7.2 ns)
+
+ <State 79>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [132]  (7.2 ns)
+
+ <State 80>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [132]  (7.2 ns)
+
+ <State 81>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [132]  (7.2 ns)
+
+ <State 82>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [132]  (7.2 ns)
+
+ <State 83>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [132]  (7.2 ns)
+
+ <State 84>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [132]  (7.2 ns)
+
+ <State 85>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [132]  (7.2 ns)
+
+ <State 86>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) [132]  (7.2 ns)
+
+ <State 87>: 2.77ns
+The critical path consists of the following:
+	'store' operation (mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94) of variable 'tmp_15_i1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:94 on array 'a', mnist/src/hls_mnist.cpp:55 [133]  (2.77 ns)
+
+ <State 88>: 0.997ns
+The critical path consists of the following:
+	'phi' operation ('k') with incoming values : ('k', mnist/src/hls_mnist.cpp:97) [138]  (0 ns)
+	'add' operation ('k', mnist/src/hls_mnist.cpp:97) [141]  (0.997 ns)
+
+ <State 89>: 4.13ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', mnist/src/hls_mnist.cpp:101) [149]  (0 ns)
+	'add' operation ('tmp_13', mnist/src/hls_mnist.cpp:103) [158]  (1.36 ns)
+	'getelementptr' operation ('weight3_addr', mnist/src/hls_mnist.cpp:103) [160]  (0 ns)
+	'load' operation ('weight3_load', mnist/src/hls_mnist.cpp:103) on array 'weight3' [161]  (2.77 ns)
+
+ <State 90>: 2.77ns
+The critical path consists of the following:
+	'load' operation ('weight3_load', mnist/src/hls_mnist.cpp:103) on array 'weight3' [161]  (2.77 ns)
+
+ <State 91>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_7', mnist/src/hls_mnist.cpp:103) [164]  (8.43 ns)
+
+ <State 92>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_7', mnist/src/hls_mnist.cpp:103) [164]  (8.43 ns)
+
+ <State 93>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_7', mnist/src/hls_mnist.cpp:103) [164]  (8.43 ns)
+
+ <State 94>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z3', mnist/src/hls_mnist.cpp:103) [165]  (8.59 ns)
+
+ <State 95>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z3', mnist/src/hls_mnist.cpp:103) [165]  (8.59 ns)
+
+ <State 96>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z3', mnist/src/hls_mnist.cpp:103) [165]  (8.59 ns)
+
+ <State 97>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z3', mnist/src/hls_mnist.cpp:103) [165]  (8.59 ns)
+
+ <State 98>: 2.77ns
+The critical path consists of the following:
+	'load' operation ('bias3_load', mnist/src/hls_mnist.cpp:104) on array 'bias3' [169]  (2.77 ns)
+
+ <State 99>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z3', mnist/src/hls_mnist.cpp:104) [170]  (8.59 ns)
+
+ <State 100>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z3', mnist/src/hls_mnist.cpp:104) [170]  (8.59 ns)
+
+ <State 101>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z3', mnist/src/hls_mnist.cpp:104) [170]  (8.59 ns)
+
+ <State 102>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('z3', mnist/src/hls_mnist.cpp:104) [170]  (8.59 ns)
+
+ <State 103>: 1.75ns
+The critical path consists of the following:
+	'getelementptr' operation ('output3_addr_1', mnist/src/hls_mnist.cpp:105) [171]  (0 ns)
+	'store' operation (mnist/src/hls_mnist.cpp:105) of variable 'z3', mnist/src/hls_mnist.cpp:104 on array 'a', mnist/src/hls_mnist.cpp:56 [172]  (1.75 ns)
+
+ <State 104>: 1.75ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', mnist/src/hls_mnist.cpp:16->mnist/src/hls_mnist.cpp:109) [177]  (0 ns)
+	'getelementptr' operation ('output3_addr_2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [184]  (0 ns)
+	'load' operation ('output3_load_1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) on array 'a', mnist/src/hls_mnist.cpp:56 [185]  (1.75 ns)
+
+ <State 105>: 1.75ns
+The critical path consists of the following:
+	'load' operation ('output3_load_1', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) on array 'a', mnist/src/hls_mnist.cpp:56 [185]  (1.75 ns)
+
+ <State 106>: 7.94ns
+The critical path consists of the following:
+	'xor' operation ('tmp_12_neg_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [187]  (0.808 ns)
+	'fexp' operation ('tmp_13_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [189]  (7.13 ns)
+
+ <State 107>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [189]  (7.13 ns)
+
+ <State 108>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [189]  (7.13 ns)
+
+ <State 109>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [189]  (7.13 ns)
+
+ <State 110>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [189]  (7.13 ns)
+
+ <State 111>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [189]  (7.13 ns)
+
+ <State 112>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [189]  (7.13 ns)
+
+ <State 113>: 7.13ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_13_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [189]  (7.13 ns)
+
+ <State 114>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_14_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [190]  (8.59 ns)
+
+ <State 115>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_14_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [190]  (8.59 ns)
+
+ <State 116>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_14_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [190]  (8.59 ns)
+
+ <State 117>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_14_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [190]  (8.59 ns)
+
+ <State 118>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [191]  (7.2 ns)
+
+ <State 119>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [191]  (7.2 ns)
+
+ <State 120>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [191]  (7.2 ns)
+
+ <State 121>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [191]  (7.2 ns)
+
+ <State 122>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [191]  (7.2 ns)
+
+ <State 123>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [191]  (7.2 ns)
+
+ <State 124>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [191]  (7.2 ns)
+
+ <State 125>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [191]  (7.2 ns)
+
+ <State 126>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [191]  (7.2 ns)
+
+ <State 127>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [191]  (7.2 ns)
+
+ <State 128>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [191]  (7.2 ns)
+
+ <State 129>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_15_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) [191]  (7.2 ns)
+
+ <State 130>: 1.75ns
+The critical path consists of the following:
+	'store' operation (mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109) of variable 'tmp_15_i2', mnist/src/hls_mnist.cpp:17->mnist/src/hls_mnist.cpp:109 on array 'a', mnist/src/hls_mnist.cpp:56 [192]  (1.75 ns)
+
+ <State 131>: 1.75ns
+The critical path consists of the following:
+	'phi' operation ('k') with incoming values : ('k', mnist/src/hls_mnist.cpp:111) [197]  (0 ns)
+	'getelementptr' operation ('output3_addr', mnist/src/hls_mnist.cpp:112) [204]  (0 ns)
+	'load' operation ('output3_load', mnist/src/hls_mnist.cpp:112) on array 'a', mnist/src/hls_mnist.cpp:56 [205]  (1.75 ns)
+
+ <State 132>: 3.51ns
+The critical path consists of the following:
+	'load' operation ('output3_load', mnist/src/hls_mnist.cpp:112) on array 'a', mnist/src/hls_mnist.cpp:56 [205]  (1.75 ns)
+	'store' operation (mnist/src/hls_mnist.cpp:112) of variable 'output3_load', mnist/src/hls_mnist.cpp:112 on array 'output_r' [207]  (1.75 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+	State 92
+	State 93
+	State 94
+	State 95
+	State 96
+	State 97
+	State 98
+	State 99
+	State 100
+	State 101
+	State 102
+	State 103
+	State 104
+	State 105
+	State 106
+	State 107
+	State 108
+	State 109
+	State 110
+	State 111
+	State 112
+	State 113
+	State 114
+	State 115
+	State 116
+	State 117
+	State 118
+	State 119
+	State 120
+	State 121
+	State 122
+	State 123
+	State 124
+	State 125
+	State 126
+	State 127
+	State 128
+	State 129
+	State 130
+	State 131
+	State 132
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

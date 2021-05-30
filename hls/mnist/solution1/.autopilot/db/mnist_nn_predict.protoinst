@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"mnist_nn_predict": {
+			"proto_instances": {
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="hls_mnist.cpp" path="/home/dy/Desktop/20210510/hls/mnist/src/hls_mnist.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="test.cpp" path="/home/dy/Desktop/20210510/hls/mnist/src/test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
